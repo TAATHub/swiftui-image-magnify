@@ -1,4 +1,6 @@
 import SwiftUI
+import Combine
+import CombineCocoa
 
 struct ImageViewer: UIViewRepresentable {
     let imageName: String
@@ -16,6 +18,8 @@ public class UIImageViewerView: UIView {
     private let scrollView: UIScrollView = UIScrollView()
     private let imageView: UIImageView = UIImageView()
     
+    private var cancellables = Set<AnyCancellable>()
+    
     required init(imageName: String) {
         self.imageName = imageName
         super.init(frame: .zero)
@@ -28,9 +32,39 @@ public class UIImageViewerView: UIView {
         
         imageView.image = UIImage(named: imageName)
         imageView.contentMode = .scaleAspectFit
-        scrollView.addSubview(imageView)
         
+        let tapGestureRecognizer = UITapGestureRecognizer()
+        tapGestureRecognizer.numberOfTapsRequired = 2
+        tapGestureRecognizer
+            .tapPublisher
+            .sink { [weak self] recognizer in
+                self?.onDoubleTap(recognizer: recognizer)
+            }
+            .store(in: &cancellables)
+
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapGestureRecognizer)
+        
+        scrollView.addSubview(imageView)
         addSubview(scrollView)
+    }
+    
+    private func onDoubleTap(recognizer: UITapGestureRecognizer) {
+        // ダブルタップで最大倍率 <-> 等倍とscale変更する
+        let scale = scrollView.maximumZoomScale
+
+        if scale != scrollView.zoomScale {
+            let tapPoint = recognizer.location(in: imageView)
+            let size = CGSize(
+                width: scrollView.frame.size.width / scale,
+                height: scrollView.frame.size.height / scale)
+            let origin = CGPoint(
+                x: tapPoint.x - size.width / 2,
+                y: tapPoint.y - size.height / 2)
+            scrollView.zoom(to: CGRect(origin: origin, size: size), animated: true)
+        } else {
+            scrollView.zoom(to: scrollView.frame, animated: true)
+        }
     }
     
     required init?(coder: NSCoder) {
