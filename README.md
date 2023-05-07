@@ -2,4 +2,4 @@
 
 SwiftUIでImageをピンチイン・ピンチアウト・ダブルタップで操作するサンプルコード
 
-![swiftui-image-magnify](https://user-images.githubusercontent.com/83394375/236226241-cb1c4b64-230b-4744-a0e2-692207310aea.gif)
+![output](https://user-images.githubusercontent.com/83394375/236677014-56510935-86b9-4c72-90e4-3c421d81367c.gif)
