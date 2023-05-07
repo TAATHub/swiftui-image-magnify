@@ -13,6 +13,7 @@
 		9A09C0832A03E21400AB67B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A09C0822A03E21400AB67B1 /* Preview Assets.xcassets */; };
 		9A7782EE2A0693DE006D7759 /* ImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7782ED2A0693DE006D7759 /* ImageViewer.swift */; };
 		9A7782F12A06962D006D7759 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 9A7782F02A06962D006D7759 /* CombineCocoa */; };
+		9A7782F32A0763F6006D7759 /* UIImageViewerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7782F22A0763F6006D7759 /* UIImageViewerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		9A09C07F2A03E21400AB67B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A09C0822A03E21400AB67B1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9A7782ED2A0693DE006D7759 /* ImageViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewer.swift; sourceTree = "<group>"; };
+		9A7782F22A0763F6006D7759 /* UIImageViewerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +57,12 @@
 		9A09C07A2A03E21300AB67B1 /* ImageMagnify */ = {
 			isa = PBXGroup;
 			children = (
-				9A09C07B2A03E21300AB67B1 /* ImageMagnifyApp.swift */,
 				9A09C07D2A03E21300AB67B1 /* ContentView.swift */,
+				9A09C07B2A03E21300AB67B1 /* ImageMagnifyApp.swift */,
+				9A7782ED2A0693DE006D7759 /* ImageViewer.swift */,
+				9A7782F22A0763F6006D7759 /* UIImageViewerView.swift */,
 				9A09C07F2A03E21400AB67B1 /* Assets.xcassets */,
 				9A09C0812A03E21400AB67B1 /* Preview Content */,
-				9A7782ED2A0693DE006D7759 /* ImageViewer.swift */,
 			);
 			path = ImageMagnify;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A7782F32A0763F6006D7759 /* UIImageViewerView.swift in Sources */,
 				9A7782EE2A0693DE006D7759 /* ImageViewer.swift in Sources */,
 				9A09C07E2A03E21300AB67B1 /* ContentView.swift in Sources */,
 				9A09C07C2A03E21300AB67B1 /* ImageMagnifyApp.swift in Sources */,
