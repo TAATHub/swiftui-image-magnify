@@ -53,9 +53,9 @@
 		9A09C07A2A03E21300AB67B1 /* ImageMagnify */ = {
 			isa = PBXGroup;
 			children = (
+				9A09C07D2A03E21300AB67B1 /* ContentView.swift */,
 				9A09C07B2A03E21300AB67B1 /* ImageMagnifyApp.swift */,
 				9A43C5FA2A03EE26007CA953 /* ImageMagnificationModifier.swift */,
-				9A09C07D2A03E21300AB67B1 /* ContentView.swift */,
 				9A09C07F2A03E21400AB67B1 /* Assets.xcassets */,
 				9A09C0812A03E21400AB67B1 /* Preview Content */,
 			);
